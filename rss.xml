@@ -23,15 +23,15 @@
         
             <copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享。</copyright>
         
-        <lastBuildDate>Sun, 08 Mar 2020 15:53:56 -0700</lastBuildDate>
+        <lastBuildDate>Sun, 08 Mar 2020 15:55:32 -0700</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://lo-ol.xyz/rss.xml" />
         
         
             <item>
                 <title>用Hugo搭建个人博客</title>
-                <link>https://lo-ol.xyz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A/</link>
-                <guid isPermaLink="true">https://lo-ol.xyz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A/</guid>
+                <link>https://lo-ol.xyz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+                <guid isPermaLink="true">https://lo-ol.xyz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
                 <pubDate>Sun, 08 Mar 2020 13:45:21 -0700</pubDate>
                 
                     <author>ljb9962@gmail.com (Lin)</author>
