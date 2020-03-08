@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Lin的小世界</title>
+        <link>https://example.com/</link>
+        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
+        <generator>Hugo 0.66.0 https://gohugo.io/</generator>
+        
+            <language>zh-CN</language>
+        
+        
+            <managingEditor>ljb9962@gmail.com (Lin)</managingEditor>
+        
+        
+            <webMaster>ljb9962@gmail.com (Lin)</webMaster>
+        
+        
+            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+        
+        <lastBuildDate>Sat, 07 Mar 2020 16:22:08 -0800</lastBuildDate>
+        
+            <atom:link rel="self" type="application/rss+xml" href="https://example.com/rss.xml" />
+        
+        
+            <item>
+                <title>My First Boke</title>
+                <link>https://example.com/posts/my-first-boke/</link>
+                <guid isPermaLink="true">https://example.com/posts/my-first-boke/</guid>
+                <pubDate>Thu, 05 Mar 2020 19:14:50 -0800</pubDate>
+                
+                    <author>ljb9962@gmail.com (Lin)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description><![CDATA[<h1 id="大家好">大家好</h1>
+<p>这是我的第一个博客，希望这是一个好的开始。</p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+    </channel>
+</rss>
