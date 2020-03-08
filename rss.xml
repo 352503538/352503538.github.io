@@ -23,15 +23,89 @@
         
             <copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享。</copyright>
         
-        <lastBuildDate>Sat, 07 Mar 2020 19:15:34 -0800</lastBuildDate>
+        <lastBuildDate>Sun, 08 Mar 2020 15:53:56 -0700</lastBuildDate>
         
             <atom:link rel="self" type="application/rss+xml" href="https://lo-ol.xyz/rss.xml" />
         
         
             <item>
+                <title>用Hugo搭建个人博客</title>
+                <link>https://lo-ol.xyz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A/</link>
+                <guid isPermaLink="true">https://lo-ol.xyz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A/</guid>
+                <pubDate>Sun, 08 Mar 2020 13:45:21 -0700</pubDate>
+                
+                    <author>ljb9962@gmail.com (Lin)</author>
+                
+                <copyright>在保留本文作者及本文链接的前提下，非商业用途随意转载分享。</copyright>
+                
+                    <description><![CDATA[<h1 id="什么是hugo--为什么要用hugo">什么是hugo &amp; 为什么要用hugo</h1>
+<p>Hugo是一个用<code>Go</code>语言编写的静态网站生成器。静态站点的好处就是快速、安全、易于部署，最主要是可以通过版本控制来进行管理。</p>
+<h1 id="如何用hugo搭建个人博客">如何用Hugo搭建个人博客</h1>
+<h2 id="下载和安装hugo">下载和安装Hugo</h2>
+<ul>
+<li>
+<p>MacOS 用户
+首先安装 <a href="https://brew.sh/">Homebrew</a> 然后在终端中运行
+<code>brew install hugo</code>
+<code>hugo version</code></p>
+</li>
+<li>
+<p>Windows 用户
+前往 <a href="https://github.com/gohugoio/hugo/releases">github的hugo/releases</a> 下载适合自己系统版本的zip打包文件，然后解压到自己本地的博客目录，比如<code>D:\Hugo</code> 得到文件<code>D:\Hugo\hugo.exe</code>
+将<code>D:\Hugo</code>加入到系统环境变量中，打开终端并运行<code>hugo version</code></p>
+</li>
+</ul>
+<h2 id="生成个人站点">生成个人站点</h2>
+<p>在D盘下创建blog文件夹作为存放个人站点文件的主目录，在终端中运行：</p>
+<pre><code>cd D:\blog\
+hugo new site 352503538.github.io-creator
+</code></pre><p>之后在blog目录下会生成一个<em>352503538.github.io-creator</em>文件夹，其中archetypes目录里可以放一些原型，用于hugo新建内容的配置属性。config.toml是网站的配置属性文件。content文件夹里放你网站的内容，例如你发布的博客文章。data目录是Hugo使用的配置文件存放的地方。layout目录存放布局内容。static目录存放静态资源如图片、css等。</p>
+<p>接下来我们可以准备编写第一篇文章了。命令如下：</p>
+<pre><code>cd 352503538.github.io-creator
+hugo new post/my-first-blog.md
+</code></pre><p>Hugo会在content目录下创建post目录，在post目录下创建<code>my-first-blog.md</code>文件。之后打开md文件，里面已经有些内容</p>
+<pre><code>---
+title: &quot;My First Blog&quot;
+date: 2020-03-05T19:14:50-08:00
+draft: false
+---
+</code></pre><p>其中<code>---</code>中间的内容是TOML配置信息，其下方可以编写个人的博客内容，如果想要发布将<code>draft: true</code>改为<code>draft: false</code>即可。</p>
+<p>如果觉得个人博客的主题太过单调，可以在<a href="https://themes.gohugo.io/">Hugo theme</a>中添加自己喜欢的主题装饰一下。</p>
+<p>我的主题是<a href="https://github.com/reuixiy/hugo-theme-meme/blob/master/README.zh-cn.md">MemE</a>，这是由一个中国人编写的，简约且优雅，教程也比较清晰，喜欢的话可以自行添加。</p>
+<h2 id="本地测试">本地测试</h2>
+<p>在终端中运行：</p>
+<pre><code>hugo server -D
+</code></pre><p>在终端中点击 <code>http://localhost:1313/</code> 就能查看个人博客了（不过只能在本地中查看）。</p>
+<h2 id="上传到github">上传到Github</h2>
+<p>首先在<em>352503538.github.io-creator</em>文件夹中新建 <em>.gitignore</em> 文件，然后在其中输入<code>/public/</code>。</p>
+<p>然后在终端中运行：</p>
+<pre><code>hugo server
+</code></pre><p>Hugo将编译所有文件并输出到<code>public</code>目录，你需要在github上创建repository，名字就是username.github.io，创建完后在终端中运行：</p>
+<pre><code>cd public
+git init
+git add .
+git commit -m &quot;第一次部署&quot;
+git remote add origin git@github.com:352503538/352503538.github.io.git
+git push -u origin master
+</code></pre><p>稍等片刻后，打开username.github.io网址，就可以看到自己的个人网站了。</p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
                 <title>My First Blog</title>
-                <link>https://lo-ol.xyz/posts/my-first-boke/</link>
-                <guid isPermaLink="true">https://lo-ol.xyz/posts/my-first-boke/</guid>
+                <link>https://lo-ol.xyz/posts/my-first-blog/</link>
+                <guid isPermaLink="true">https://lo-ol.xyz/posts/my-first-blog/</guid>
                 <pubDate>Thu, 05 Mar 2020 19:14:50 -0800</pubDate>
                 
                     <author>ljb9962@gmail.com (Lin)</author>
