@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Lin的小世界</title>
     <subtitle type="html">这是一个菜鸟的后花园！噜啦啦拉拉！</subtitle>
-    <updated>2020-03-10T18:50:06-07:00</updated>
+    <updated>2020-03-12T18:11:08-07:00</updated>
     <id>https://lo-ol.xyz/</id>
     <link rel="alternate" type="text/html" href="https://lo-ol.xyz/" />
     <link rel="self" type="application/atom+xml" href="https://lo-ol.xyz/atom.xml" />
@@ -17,10 +17,134 @@
     <rights>在保留本文作者及本文链接的前提下，非商业用途随意转载分享。</rights>
     <generator uri="https://gohugo.io/" version="0.66.0">Hugo</generator>
         <entry>
+            <title type="text">集合容器的粗理解</title>
+            <link rel="alternate" type="text/html" href="https://lo-ol.xyz/posts/%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8%E7%9A%84%E7%B2%97%E7%90%86%E8%A7%A3/" />
+            <id>https://lo-ol.xyz/posts/%E9%9B%86%E5%90%88%E5%AE%B9%E5%99%A8%E7%9A%84%E7%B2%97%E7%90%86%E8%A7%A3/</id>
+            <updated>2020-03-12T18:11:04-07:00</updated>
+            <published>2020-03-11T19:18:33-07:00</published>
+            <author>
+                    <name>Lin</name>
+                    <uri>https://lo-ol.xyz/</uri>
+                    <email>ljb9962@gmail.com</email>
+                    </author>
+            <rights>在保留本文作者及本文链接的前提下，非商业用途随意转载分享。</rights>
+    
+    <summary type="html"><![CDATA[我在大约两周前初步地学习了集合容器，我不确定还记得多少，希望能通过写blog的方式来……]]></summary>
+            
+                <content type="html"><![CDATA[<p>我在大约两周前初步地学习了集合容器，我不确定还记得多少，希望能通过写blog的方式来巩固一下。</p>
+<h1 id="集合容器简述">集合容器简述</h1>
+<p>集合容器是用来储存数据的。</p>
+<p><img src="/static/images/Collection%20&amp;%20Map%20%E5%8F%82%E8%80%83%E5%9B%BE.jpg" alt="Collection & Map 参考图" title="Collection &amp; Map 参考图">
+Java容器分为<code>Collection</code>和<code>Map</code>两大类，<code>Collection</code>集合的子接口主要有<code>Set</code>，<code>List</code>和<code>Queue</code>，而<code>Map</code>接口不是<code>Collection</code>的子接口。</p>
+<h2 id="集合与数组的区别">集合与数组的区别</h2>
+<ul>
+<li>数组的长度是固定的，而集合的长度是可变的。</li>
+<li>数组既可以储存基本数据类型，也可以储存引用数据类型。集合只能用来储存引用数据类型。</li>
+<li>数组中储存点元素类型是单一的，而集合储存的对象可以是不同的。</li>
+</ul>
+<h1 id="collection体系"><code>Collection</code>体系</h1>
+<p><code>Collection</code>接口是集合类的根接口，Java中没有提供这个接口的直接的实现类。但是却让其被继承产生了几个个接口，像是<code>Set</code>和<code>List</code>。</p>
+<p><code>List</code>：一个有序（元素存入集合的顺序和取出的顺序一致）容器，元素可以重复，可以插入多个null元素，元素都有索引。常用的实现类有 <code>ArrayList</code>、<code>LinkedList</code> 和 <code>Vector</code>。</p>
+<p><code>Set</code>：一个无序（存入和取出顺序有可能不一致）容器，不可以存储重复元素，只允许存入一个null元素，必须保证元素唯一性。Set 接口常用实现类是 HashSet、LinkedHashSet（不孝子，唯一且有序） 以及 TreeSet。</p>
+<h2 id="list常用子接口"><code>List</code>常用子接口</h2>
+<ol>
+<li>
+<p><code>ArrayList</code>(Object数组)</p>
+<ul>
+<li>可以指定初始容量且扩容是需要复制</li>
+<li>非线性安全</li>
+<li>寻址困难，插入和删除容易</li>
+</ul>
+</li>
+<li>
+<p><code>LinkedList</code>(双向循环链表)</p>
+<ul>
+<li>不可以指定初始容量且扩容是不需要复制</li>
+<li>非线性安全</li>
+<li>寻址容易，插入和删除困难（与<code>ArrayList</code>相反）</li>
+</ul>
+</li>
+<li>
+<p><del><code>Vector</code></del>(Object数组)(<code>ArrayList</code>的前生)</p>
+<ul>
+<li>可以指定初始容量且扩容是需要复制</li>
+<li>线性安全</li>
+</ul>
+</li>
+</ol>
+<h2 id="set常用子接口"><code>Set</code>常用子接口</h2>
+<ol>
+<li>
+<p><code>HashSet</code>(最常⽤，最⾼效的Set实现)</p>
+<ul>
+<li>存入和取出顺序有可能不一致</li>
+<li>内部无重复元素</li>
+<li>基于<code>HashMap</code>实现的，底层采用<code>HashMap</code>来保存元素</li>
+<li><code>HashSet</code>的实现是不同步的</li>
+</ul>
+</li>
+<li>
+<p><code>LinkedHashSet</code></p>
+<ul>
+<li>存入和取出顺序一致</li>
+<li>内部无重复元素</li>
+<li><code>LinkedHashSet</code>继承与<code>HashSet</code>，并且其内部是通过<code>LinkedHashMap</code>来实现的</li>
+</ul>
+</li>
+<li>
+<p><code>TreeSet</code></p>
+<ul>
+<li>存入和取出顺序有可能不一致</li>
+<li>会自动按照升序排序</li>
+<li><code>TreeSet</code>是基于红黑树实现的，该接口由<code>TreeMap</code>实例支持，能提高查找的效率</li>
+</ul>
+</li>
+</ol>
+<h2 id="collections具法集合">Collections⼯具⽅法集合</h2>
+<ul>
+<li>emptySet(): 等返回⼀个⽅便的空集合</li>
+<li>synchronizedCollection: 将⼀个集合变成线程安全的</li>
+<li>unmodifiableCollection: 将⼀个集合变成不可变的（也可以使⽤Guava的Immutable）</li>
+</ul>
+<h1 id="map体系"><code>Map</code>体系</h1>
+<p><code>Map</code>是一个键值对集合，存储键、值和之间的映射。 Key无序，唯一；value 不要求有序，允许重复。<code>Map</code>没有继承于<code>Collection</code>接口，从<code>Map</code>集合中检索元素时，只要给出键对象，就会返回对应的值对象。</p>
+<h2 id="map的常用实现类主要有">Map的常用实现类主要有：</h2>
+<ol>
+<li>
+<p><code>HashMap</code></p>
+<ul>
+<li><code>HashMap</code>基于<code>Hash</code>算法实现的。
+<img src="/static/images/HashMap%E4%BE%8B%E5%AD%90.jpg" alt="HashMap例子" title="图片出处见水印">
+<strong>HashMap是非同步的，并且允许null，即null value和null key。</strong></li>
+</ul>
+</li>
+<li>
+<p><code>TreeMap</code></p>
+<ul>
+<li>和<code>TreeSet</code>类似</li>
+</ul>
+</li>
+</ol>
+<p>写了这么多其实感觉基础还是不太扎实，还是需要大量的题目去练习。</p>
+]]></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">Java的包管理与Maven初步</title>
             <link rel="alternate" type="text/html" href="https://lo-ol.xyz/posts/java%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%8Emaven%E5%88%9D%E6%AD%A5/" />
             <id>https://lo-ol.xyz/posts/java%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%8Emaven%E5%88%9D%E6%AD%A5/</id>
-            <updated>2020-03-10T18:50:00-07:00</updated>
+            <updated>2020-03-10T21:14:23-07:00</updated>
             <published>2020-03-10T16:37:38-07:00</published>
             <author>
                     <name>Lin</name>
@@ -99,7 +223,7 @@ Maven 面对同一个包的不同版本时，会默认选择最短路径的那�
             <title type="text">用Hugo搭建个人博客</title>
             <link rel="alternate" type="text/html" href="https://lo-ol.xyz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
             <id>https://lo-ol.xyz/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</id>
-            <updated>2020-03-08T15:55:16-07:00</updated>
+            <updated>2020-03-10T21:14:23-07:00</updated>
             <published>2020-03-08T13:45:21-07:00</published>
             <author>
                     <name>Lin</name>
@@ -178,7 +302,7 @@ git push -u origin master
             <title type="text">My First Blog</title>
             <link rel="alternate" type="text/html" href="https://lo-ol.xyz/posts/my-first-blog/" />
             <id>https://lo-ol.xyz/posts/my-first-blog/</id>
-            <updated>2020-03-08T15:23:25-07:00</updated>
+            <updated>2020-03-10T21:14:23-07:00</updated>
             <published>2020-03-05T19:14:50-08:00</published>
             <author>
                     <name>Lin</name>
